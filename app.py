@@ -16,7 +16,7 @@ st.set_page_config(
     page_title="Car-Sev C.A. | Moldes de Goma para Estampado de Pisos · Valencia",
     page_icon="🏆",
     layout="wide",
-    initial_sidebar_state="auto"
+    initial_sidebar_state="expanded"
 )
 
 # ── 1.1. OCULTAR ELEMENTOS DE STREAMLIT (MARCA DE AGUA, MENÚ Y HEADER) ────────
