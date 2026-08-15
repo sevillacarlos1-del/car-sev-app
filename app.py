@@ -11,25 +11,24 @@ import urllib.parse
 from pathlib import Path
 import streamlit as st
 
-# ── 1. CONFIGURACIÓN DE LA PÁGINA (DEBE SER EL PRIMER COMANDO ST) ─────────────
-st.set_page_config(
-    page_title="Car-Sev C.A. | Moldes de Goma para Estampado de Pisos · Valencia",
-    page_icon="🏆",
-    layout="wide",
-    initial_sidebar_state="expanded"
-)
-
-# ── 1.1. OCULTAR ELEMENTOS DE STREAMLIT (MARCA DE AGUA, MENÚ Y HEADER) ────────
+# ── 1.1. OCULTAR ELEMENTOS DE STREAMLIT Y FORZAR VISIBILIDAD DE LA BARRA LATERAL ──
 hide_streamlit_style = """
     <style>
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
     .stAppDeployButton {display:none;}
+    /* Forzar que el botón y la barra lateral sean completamente visibles en Render */
+    [data-testid="collapsedControl"] {
+        display: block !important;
+        visibility: visible !important;
+        background-color: rgba(139, 0, 0, 0.8) !important;
+        color: white !important;
+        border-radius: 4px;
+    }
     </style>
 """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
 # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
