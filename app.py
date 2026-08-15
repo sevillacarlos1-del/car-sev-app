@@ -19,6 +19,17 @@ st.set_page_config(
     initial_sidebar_state="auto"
 )
 
+# ── 1.1. OCULTAR ELEMENTOS DE STREAMLIT (MARCA DE AGUA, MENÚ Y HEADER) ────────
+hide_streamlit_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .stAppDeployButton {display:none;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
@@ -53,7 +64,7 @@ def img_b64(filename: str) -> str:
         return ""
 
 
-# ── 4. ESTILOS CSS PERSONALIZADOS & PWA METADATA (SIN AZUL) ───────────────────
+# ── 4. ESTILOS CSS PERSONALIZADOS & PWA METADATA ─────────────────────────────────────────────────
 def inject_custom_css_and_pwa():
     # Metadatos PWA y manifiesto
     st.markdown("""
