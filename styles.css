@@ -1,0 +1,50 @@
+/* styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap');
+
+:root {
+    --gold: #D4AF37;
+    --dark: #1A1A1A;
+    --dark-red: #8B0000;
+    --light-grey: #555555;
+    --bg-white: #FFFFFF;
+}
+
+.ornament-gold {
+    color: var(--gold);
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.luxury-card {
+    background: var(--bg-white);
+    padding: 20px;
+    border: 1px solid #E0E0E0;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.luxury-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold);
+}
+
+.card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--dark);
+    margin: 10px 0;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    color: var(--light-grey);
+    line-height: 1.5;
+}
+
+.divider-gold {
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 30px 0;
+}
