@@ -16,20 +16,27 @@ hide_streamlit_style = """
     <style>
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    header {visibility: hidden;}
-    .stAppDeployButton {display:none;}
-    /* Forzar que el botón y la barra lateral sean completamente visibles en Render */
+    
+    /* Forzar que el botón de la barra lateral sea completamente visible y tenga buen tamaño */
     [data-testid="collapsedControl"] {
-        display: block !important;
+        display: flex !important;
         visibility: visible !important;
-        background-color: rgba(139, 0, 0, 0.8) !important;
+        z-index: 999999 !important;
+        background-color: rgba(139, 0, 0, 0.95) !important;
         color: white !important;
-        border-radius: 4px;
+        border-radius: 6px;
+        padding: 6px !important;
+        margin: 6px !important;
+    }
+    
+    /* Asegurar que el icono interno del botón se vea blanco y claro */
+    [data-testid="collapsedControl"] svg {
+        fill: white !important;
+        color: white !important;
     }
     </style>
 """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-# ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)                                                                                                          # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
 
