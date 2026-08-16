@@ -714,7 +714,7 @@ with col3:
         </div>
         """, unsafe_allow_html=True)
 
-   	 st.markdown('<div class="divider-gold"></div>', unsafe_allow_html=True)
+        st.markdown('<div class="divider-gold"></div>', unsafe_allow_html=True)
 
     # 📹 SECCIÓN DESTACADA DE VIDEO DE YOUTUBE INTERACTIVO
     st.markdown("""
