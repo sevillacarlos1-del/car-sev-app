@@ -9,34 +9,30 @@ Optimizado para Navegación Móvil (iOS / Android) y Despliegue en Render
 import base64
 import urllib.parse
 from pathlib import Path
-import streamlit as st
-
-# ── 1.1. OCULTAR ELEMENTOS DE STREAMLIT Y FORZAR VISIBILIDAD DE LA BARRA LATERAL ──
 hide_streamlit_style = """
     <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    
-    /* Forzar que el botón de la barra lateral sea completamente visible y tenga buen tamaño */
-    [data-testid="collapsedControl"] {
-        display: flex !important;
-        visibility: visible !important;
-        z-index: 999999 !important;
-        background-color: rgba(139, 0, 0, 0.95) !important;
-        color: white !important;
-        border-radius: 6px;
-        padding: 6px !important;
-        margin: 6px !important;
-    }
-    
-    /* Asegurar que el icono interno del botón se vea blanco y claro */
-    [data-testid="collapsedControl"] svg {
-        fill: white !important;
-        color: white !important;
-    }
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        
+        /* Forzar que el botón de la barra lateral sea visible y tenga color destacado */
+        [data-testid="collapsedControl"] {
+            display: flex !important;
+            visibility: visible !important;
+            z-index: 999999 !important;
+            background-color: rgba(212, 175, 55, 0.9) !important;
+            color: #1a1a1a !important;
+            border-radius: 6px;
+            padding: 6px !important;
+            margin: 6px !important;
+        }
+        
+        /* Asegurar que el icono interno del botón se vea oscuro para hacer contraste con el fondo dorado */
+        [data-testid="collapsedControl"] svg {
+            fill: #1a1a1a !important;
+            color: #1a1a1a !important;
+        }
     </style>
-"""
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)                                                                                                          # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
+"""st.markdown(hide_streamlit_style, unsafe_allow_html=True)                                                                                                          # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
 
@@ -91,7 +87,7 @@ def inject_custom_css_and_pwa():
     :root {
         --bg-main: #FFFFFF;
         --bg-alt: #FAFAF8;
-        --gold-primary: #D4AF37;
+        --gold-primary: #D4AF37;f
         --gold-light: #FFE57F;
         --gold-dark: #AA820A;
         --chic-red: #8B0000;
@@ -644,12 +640,14 @@ if "Inicio" in menu_option:
     # Logotipo principal (logo1_original.png = alta resolución)
     logo_inicio = img_b64("logo1_original.png") or img_b64("logo_original.png") or img_b64("logo_192.png")
     if logo_inicio:
-        st.markdown(
-            '<div style="text-align:center; padding:20px 0 10px 0;">'
-            '<img src="' + logo_inicio + '" alt="Car-Sev C.A." style="max-width:260px; height:auto; display:block; margin:0 auto;">'
-            '</div>',
-            unsafe_allow_html=True
-        )
+       # --- CAMPO DE TEXTO ---
+    # Usamos text_input para que funcione fluido en todos lados
+    requerimiento = st.text_input(
+        label="¿En qué podemos ayudarte?",
+        placeholder="Hola Car-Sev C.A.! Quisiera asesoría rápida sobre...",
+        key="campo_texto_usuario"
+    )
+        
 
     # Encabezado Principal Hero
     st.markdown("""
