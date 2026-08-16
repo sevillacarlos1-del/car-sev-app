@@ -9,43 +9,27 @@ Optimizado para Navegación Móvil (iOS / Android) y Despliegue en Render
 import base64
 import urllib.parse
 from pathlib import Path
-hide_streamlit_style = """
+st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
         
-        /* Forzar que el botón de la barra lateral sea visible y tenga color destacado */
+        /* Botón de la barra lateral visible y en tono dorado */
         [data-testid="collapsedControl"] {
             display: flex !important;
             visibility: visible !important;
             z-index: 999999 !important;
             background-color: rgba(212, 175, 55, 0.9) !important;
-            color: #1a1a1a !important;
             border-radius: 6px;
             padding: 6px !important;
             margin: 6px !important;
         }
-        
-        /* Asegurar que el icono interno del botón se vea oscuro para hacer contraste con el fondo dorado */
-        [data-testid="collapsedControl"] {
-            display: flex !important;
-            visibility: visible !important;
-            z-index: 999999 !important;
-            background-color: rgba(212, 175, 55, 0.9) !important;
-            color: #1a1a1a !important;
-            border-radius: 6px;
-            padding: 6px !important;
-            margin: 6px !important;
-        }
-
         [data-testid="collapsedControl"] svg {
             fill: #1a1a1a !important;
             color: #1a1a1a !important;
         }
     </style>
-"""
-
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)                                                                                                         # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
+""", unsafe_allow_html=True)                                                                                                                                  # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
 
