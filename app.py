@@ -636,10 +636,10 @@ with st.sidebar:
             <p style="font-size:0.85rem; font-weight:700; color:#1A1A1A; margin:4px 0;">{WHATSAPP_DISPLAY}</p>
             <p style="font-size:0.75rem; color:#555555; margin-bottom:10px;">Valencia / Envíos a Nivel Nacional</p>
         </div>
-    """, unsafe_allow_html=True)
+ """, unsafe_allow_html=True)
 
     st.markdown(wa_button("Hola Car-Sev C.A.! Quisiera asesoría rápida sobre moldes de goma.", "💬 WhatsApp Directo"), unsafe_allow_html=True)
-	st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 # ── 8. SECCIÓN 1: INICIO / PRESENTACIÓN ──────────────────────────────────────
