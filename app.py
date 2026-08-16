@@ -27,12 +27,25 @@ hide_streamlit_style = """
         }
         
         /* Asegurar que el icono interno del botón se vea oscuro para hacer contraste con el fondo dorado */
+        [data-testid="collapsedControl"] {
+            display: flex !important;
+            visibility: visible !important;
+            z-index: 999999 !important;
+            background-color: rgba(212, 175, 55, 0.9) !important;
+            color: #1a1a1a !important;
+            border-radius: 6px;
+            padding: 6px !important;
+            margin: 6px !important;
+        }
+
         [data-testid="collapsedControl"] svg {
             fill: #1a1a1a !important;
             color: #1a1a1a !important;
         }
     </style>
-"""st.markdown(hide_streamlit_style, unsafe_allow_html=True)                                                                                                          # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
+"""
+
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)                                                                                                         # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
 
