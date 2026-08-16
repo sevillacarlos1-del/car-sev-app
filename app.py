@@ -9,11 +9,21 @@ Optimizado para Navegación Móvil (iOS / Android) y Despliegue en Render
 import base64
 import urllib.parse
 from pathlib import Path
+import streamlit as st
+
+# --- TÍTULO DE LA PESTAÑA DEL NAVEGADOR ---
+st.set_page_config(
+    page_title="CAR-SEV C.A. - Moldes y Filtros",
+    page_icon="⚙️",
+    layout="wide",
+    initial_sidebar_state="auto"
+)
+
 st.markdown("""
     <style>
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
-        
+...        
         /* Botón de la barra lateral visible y en tono dorado */
         [data-testid="collapsedControl"] {
             display: flex !important;
@@ -629,7 +639,7 @@ with st.sidebar:
     """, unsafe_allow_html=True)
 
     st.markdown(wa_button("Hola Car-Sev C.A.! Quisiera asesoría rápida sobre moldes de goma.", "💬 WhatsApp Directo"), unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
+	st.markdown("</div>", unsafe_allow_html=True)
 
 
 # ── 8. SECCIÓN 1: INICIO / PRESENTACIÓN ──────────────────────────────────────
