@@ -670,10 +670,15 @@ if "Inicio" in menu_option:
     <div class="divider-gold"></div>
     """, unsafe_allow_html=True)
 
-    # Ventajas Clave / Pilares
-    col1, col2, col3 = st.columns(3)
+  # --- LOGO EN LA PARTE CENTRAL ---
+col_logo1, col_logo_centro, col_logo2 = st.columns([1, 2, 1]) 
+with col_logo_centro:
+    st.image("logo1_original.png", use_column_width=True)
 
-    with col1:
+# Ventajas Clave / Pilares
+col1, col2, col3 = st.columns(3)
+
+with col1:
         st.markdown("""
         <div class="luxury-card" style="text-align:center; height:100%;">
             <div style="font-size: 2.2rem; margin-bottom: 10px;">🛡️</div>
