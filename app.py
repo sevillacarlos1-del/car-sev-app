@@ -648,8 +648,8 @@ if "Inicio" in menu_option:
     logo_inicio = img_b64("logo1_original.png") or img_b64("logo_original.png") or img_b64("logo_192.png")
     if logo_inicio:
        # --- CAMPO DE TEXTO ---
-    # Usamos text_input para que funcione fluido en todos lados
-    requerimiento = st.text_input(
+# Usamos text_input para que funcione fluido en todos lados
+        requerimiento = st.text_input(
         label="¿En qué podemos ayudarte?",
         placeholder="Hola Car-Sev C.A.! Quisiera asesoría rápida sobre...",
         key="campo_texto_usuario"
