@@ -702,7 +702,7 @@ with col2:
         </div>
         """, unsafe_allow_html=True)
 
-    with col3:
+with col3:
         st.markdown("""
         <div class="luxury-card" style="text-align:center; height:100%;">
             <div style="font-size: 2.2rem; margin-bottom: 10px;">⚡</div>
