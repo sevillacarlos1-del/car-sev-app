@@ -690,7 +690,7 @@ with col1:
         </div>
         """, unsafe_allow_html=True)
 
-    with col2:
+with col2:
         st.markdown("""
         <div class="luxury-card" style="text-align:center; height:100%;">
             <div style="font-size: 2.2rem; margin-bottom: 10px;">🎨</div>
