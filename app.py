@@ -714,10 +714,10 @@ with col3:
         </div>
         """, unsafe_allow_html=True)
 
-        st.markdown('<div class="divider-gold"></div>', unsafe_allow_html=True)
+st.markdown('<div class="divider-gold"></div>', unsafe_allow_html=True)
 
     # 📹 SECCIÓN DESTACADA DE VIDEO DE YOUTUBE INTERACTIVO
-    st.markdown("""
+st.markdown("""
     <div style="text-align: center; margin-bottom: 24px;">
         <span class="ornament-gold">✦ DEMOSTRACIÓN EN OBRA & TALLER ✦</span>
         <h2 style="font-family:'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); color: #1A1A1A; margin: 8px 0;">
