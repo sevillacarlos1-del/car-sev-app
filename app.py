@@ -673,7 +673,7 @@ if "Inicio" in menu_option:
     # Logo Central
     col_logo1, col_logo_centro, col_logo2 = st.columns([1, 2, 1]) 
     with col_logo_centro:
-        st.image("logo1_original.png", use_column_width=True)
+        st.image("logo1_original.png", use_container_width=True)
 
     # Ventajas Clave / Pilares
     col1, col2, col3 = st.columns(3)
