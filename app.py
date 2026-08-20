@@ -767,7 +767,7 @@ st.markdown("""
 
 
 # ── 9. SECCIÓN 2: CATÁLOGO COMPLETO DE 14 MOLDES ────────────────────────────
-elif "Catálogo" in menu_option:
+if "Catálogo" in menu_option:
     st.markdown("""
     <div style="text-align: center; padding: 20px 0 10px 0;">
         <span class="ornament-gold">✦ GALERÍA DE 14 MODELOS EXCLUSIVOS ✦</span>
@@ -832,7 +832,7 @@ elif "Catálogo" in menu_option:
 
 
 # ── 10. SECCIÓN 3: COTIZADOR / PEDIDOS INTERACTIVO CON FICHA PDF ─────────────
-elif "Cotizador" in menu_option:
+if "Cotizador" in menu_option:
     st.markdown("""
     <div style="text-align: center; padding: 20px 0 10px 0;">
         <span class="ornament-gold">✦ CALCULADORA DE PROYECTO & MATERIALES ✦</span>
@@ -953,7 +953,7 @@ elif "Cotizador" in menu_option:
 
 
 # ── 11. SECCIÓN 4: CONTACTO & UBICACIÓN SATELITAL (VALENCIA, VENEZUELA) ───────
-elif "Contacto" in menu_option:
+if "Contacto" in menu_option:
     st.markdown("""
     <div style="text-align: center; padding: 20px 0 10px 0;">
         <span class="ornament-gold">✦ ATENCIÓN INSTITUCIONAL & ASESORÍA ✦</span>
