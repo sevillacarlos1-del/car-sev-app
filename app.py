@@ -962,7 +962,7 @@ if "Contacto" in menu_option:
     with ct_col1:
         st.markdown(f"""
         <div style="margin-bottom:16px;">
-            <div style="font-size:0.75rem; color:#AA820A; font-weight:700; text-transform:uppercase;">Planta Industrial & Sede Principal:</div>
+            <div style="font-size:0.75rem; color:#AA820A; font-weight:700; text-transform:uppercase;">FABRICACION & PRICIPAL:</div>
             <div style="font-size:0.9rem; font-weight:600; color:#1A1A1A;">Fabricacion Urbanizacion Parque valencia Car-Sev C.A., Valencia, Estado Carabobo, Venezuela.</div>
         </div>
 
@@ -982,7 +982,7 @@ if "Contacto" in menu_option:
         </div>
         """, unsafe_allow_html=True)
         
-        st.markdown(wa_button("Hola Car-Sev C.A.! Quisiera coordinar una visita a la planta en Valencia o solicitar cotización.", "✦ Escribir a WhatsApp Oficial (+58 0416-6481679)"), unsafe_allow_html=True)
+        st.markdown(wa_button("Hola Car-Sev C.A.! Quisiera coordinar una visita en Valencia o solicitar cotización.", "✦ Escribir a WhatsApp Oficial (+58 0416-6481679)"), unsafe_allow_html=True)
         st.markdown("</div>", unsafe_allow_html=True)
 
     with ct_col2:
@@ -1107,7 +1107,7 @@ st.markdown("""
         © 2026 CAR-SEV C.A. · TODOS LOS DERECHOS RESERVADOS · VALENCIA, CARABOBO, VENEZUELA
     </p> 
     <p style="font-size:0.75rem; color:#777777;">
-        Fabricación Industrial de Moldes de Goma y Pavimentos Decorativos de Alta Resistencia
+        Fabricación de Moldes de Goma y Pavimentos Decorativos de Alta Resistencia
     </p>
 </footer>
 """, unsafe_allow_html=True)
