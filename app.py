@@ -735,7 +735,7 @@ with v_col2:
       st.video("https://www.youtube.com/watch?v=g1pTvoL8Q10")
 
     # Paso a Paso del Estampado
-    st.markdown("""
+st.markdown("""
     <div style="margin-top: 36px; padding: 28px; background: #FFFFFF; border: 2px solid #D4AF37; border-radius: 16px; box-shadow: 0 4px 20px rgba(212,175,55,0.12);">
         <h3 style="font-family:'Playfair Display', serif; color: #8B0000; font-size: 1.4rem; text-align: center; margin-bottom: 20px;">
             Proceso Estándar de Estampado de Pavimentos
