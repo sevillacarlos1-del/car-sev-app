@@ -1,7 +1,7 @@
 {
   "name": "Car-Sev C.A. | Moldes de Goma",
   "short_name": "Car-Sev C.A.",
-  "description": "Fabricación de moldes de goma para el estampado de pisos y pavimentos decorativos",
+  "description": "Fabricación de moldes de goma para el estampado de pisos y pavimentos",
   "start_url": "./?app=true",
   "scope": "./",
   "display": "standalone",
@@ -9,7 +9,7 @@
   "theme_color": "#8B0000",
   "icons": [
     {
-      "src": "static/logo-192.png",
+      "src": "A/logo_192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
