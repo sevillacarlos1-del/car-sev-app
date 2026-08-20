@@ -644,17 +644,15 @@ with st.sidebar:
 
 # ── 8. SECCIÓN 1: INICIO / PRESENTACIÓN ──────────────────────────────────────
 if "Inicio" in menu_option:
-    # Logotipo principal
+    # Logotipo principal (logo1_original.png = alta resolución)
     logo_inicio = img_b64("logo1_original.png") or img_b64("logo_original.png") or img_b64("logo_192.png")
     if logo_inicio:
-        st.markdown(f'<div style="text-align:center;"><img src="{logo_inicio}" style="max-width:280px; width:100%;"></div>', unsafe_allow_html=True)
-    
-    # Campo de texto interactivo
-    requerimiento = st.text_input(
-        label="¿En qué podemos ayudarte?",
-        placeholder="Hola Car-Sev C.A.! Quisiera asesoría rápida sobre...",
-        key="campo_texto_usuario"
-    )
+        st.markdown(
+            '<div style="text-align:center; padding:20px 0 10px 0;">'
+            '<img src="' + logo_inicio + '" alt="Car-Sev C.A." style="max-width:260px; height:auto; display:block; margin:0 auto;">'
+            '</div>',
+            unsafe_allow_html=True
+        )
 
     # Encabezado Principal Hero
     st.markdown("""
@@ -669,11 +667,6 @@ if "Inicio" in menu_option:
     </div>
     <div class="divider-gold"></div>
     """, unsafe_allow_html=True)
-
-    # Logo Central
-    col_logo1, col_logo_centro, col_logo2 = st.columns([1, 2, 1]) 
-    with col_logo_centro:
-        st.image("logo1_original.png", use_container_width=True)
 
     # Ventajas Clave / Pilares
     col1, col2, col3 = st.columns(3)
@@ -716,7 +709,7 @@ if "Inicio" in menu_option:
 
     st.markdown('<div class="divider-gold"></div>', unsafe_allow_html=True)
 
-    # SECCIÓN DESTACADA DE VIDEO DE YOUTUBE INTERACTIVO
+    # 📹 SECCIÓN DESTACADA DE VIDEO DE YOUTUBE INTERACTIVO
     st.markdown("""
     <div style="text-align: center; margin-bottom: 24px;">
         <span class="ornament-gold">✦ DEMOSTRACIÓN EN OBRA & TALLER ✦</span>
@@ -738,8 +731,7 @@ if "Inicio" in menu_option:
     st.markdown("""
     <div style="margin-top: 36px; padding: 28px; background: #FFFFFF; border: 2px solid #D4AF37; border-radius: 16px; box-shadow: 0 4px 20px rgba(212,175,55,0.12);">
         <h3 style="font-family:'Playfair Display', serif; color: #8B0000; font-size: 1.4rem; text-align: center; margin-bottom: 20px;">
-            Proceso Estándar de Estampado de Pavimentos
-        </h3>
+        </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
             <div style="padding: 12px; border-left: 3px solid #D4AF37;">
                 <p style="font-weight: 700; color: #AA820A; font-size: 0.8rem;">PASO 1</p>
@@ -764,7 +756,6 @@ if "Inicio" in menu_option:
         </div>
     </div>
     """, unsafe_allow_html=True)
-
 # ── 9. SECCIÓN 2: CATÁLOGO COMPLETO DE 14 MOLDES ────────────────────────────
 if "Catálogo" in menu_option:
     st.markdown("""
