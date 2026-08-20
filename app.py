@@ -1115,7 +1115,7 @@ st.markdown("""
         CAR-SEV C.A.    </p>
     <p class="ornament-gold" style="font-size:0.7rem; margin-bottom:8px;">
         © 2026 CAR-SEV C.A. · TODOS LOS DERECHOS RESERVADOS · VALENCIA, CARABOBO, VENEZUELA
-    </p>
+    </p> 
     <p style="font-size:0.75rem; color:#777777;">
         Fabricación Industrial de Moldes de Goma y Pavimentos Decorativos de Alta Resistencia
     </p>
