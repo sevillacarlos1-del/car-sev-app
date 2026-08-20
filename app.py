@@ -766,7 +766,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 
-# ── 9. SECCIÓN 2: CATÁLOGO COMPLETO DE 14 MOLDES ─────────────────────────────
+# ── 9. SECCIÓN 2: CATÁLOGO COMPLETO DE 14 MOLDES ────────────────────────────
 elif "Catálogo" in menu_option:
     st.markdown("""
     <div style="text-align: center; padding: 20px 0 10px 0;">
