@@ -19,7 +19,7 @@ st.set_page_config(
     initial_sidebar_state="auto"
 )
 
-   st.markdown("""
+st.markdown("""
     <!-- Enlace PWA para instalación -->
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#8B0000">
