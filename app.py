@@ -19,11 +19,19 @@ st.set_page_config(
     initial_sidebar_state="auto"
 )
 
-st.markdown("""
+   st.markdown("""
+    <!-- Enlace PWA para instalación -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#8B0000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="CAR-SEV">
+    <link rel="apple-touch-icon" href="A/logo_192.png">
+
     <style>
         #MainMenu {visibility: hidden;}
         footer {visibility: hidden;}
-...        
+        
         /* Botón de la barra lateral visible y en tono dorado */
         [data-testid="collapsedControl"] {
             display: flex !important;
@@ -39,7 +47,7 @@ st.markdown("""
             color: #1a1a1a !important;
         }
     </style>
-""", unsafe_allow_html=True)                                                                                                                                  # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
+""", unsafe_allow_html=True)                                                                                                                          # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
 
