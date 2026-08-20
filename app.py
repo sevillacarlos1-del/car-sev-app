@@ -404,7 +404,7 @@ inject_custom_css_and_pwa()
 # Aviso Móvil Responsivo
 st.markdown("""
 <div class="mobile-notice">
-    💡 <b>¿Nos visitas desde el celular?</b> Toca el botón dorado <b>☰</b> en la esquina superior izquierda para desplegar el menú de navegación y explorar los 14 moldes.
+    💡 <b>¿Nos visitas desde el celular?</b> Toca la parte superior IZQUIERDA Aparecerá Un botoncito Gris <b>☰</b> en la esquina superior izquierda para desplegar el menú de navegación y explorar los 14 moldes.
 </div>
 """, unsafe_allow_html=True)
 
