@@ -10,15 +10,8 @@ import base64
 import urllib.parse
 from pathlib import Path
 import streamlit as st
-# Vinculación del manifiesto PWA
-st.markdown(
-    """
-    <link rel="manifest" href="/app/static/manifest.json">
-    <meta name="theme-color" content="#000000">
-    """,
-    unsafe_allow_html=True
-)
-# --- TÍTULO DE LA PESTAÑA DEL NAVEGADOR ---
+
+# --- 1. CONFIGURACIÓN DE LA PÁGINA (SIEMPRE DE PRIMERO) ---
 st.set_page_config(
     page_title="CAR-SEV C.A. - Moldes y Filtros",
     page_icon="⚙️",
@@ -26,6 +19,7 @@ st.set_page_config(
     initial_sidebar_state="auto"
 )
 
+# --- 2. METADATOS PWA Y ESTILOS ---
 st.markdown("""
     <!-- Metadatos PWA y Compatibilidad Móvil -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -35,10 +29,10 @@ st.markdown("""
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="CAR-SEV">
 
-    <!-- Enlace al Manifest e Iconos -->
-    <link rel="manifest" href="/manifest.json">
-    <link rel="icon" type="image/png" href="A/logo_192.png">
-    <link rel="apple-touch-icon" href="A/logo_192.png">
+    <!-- Enlace al Manifest e Iconos PWA -->
+    <link rel="manifest" href="/app/static/manifest.json">
+    <link rel="icon" type="image/png" href="/app/static/logo_192.png">
+    <link rel="apple-touch-icon" href="/app/static/logo_192.png">
 
     <style>
         #MainMenu {visibility: hidden;}
@@ -59,7 +53,9 @@ st.markdown("""
             color: #1a1a1a !important;
         }
     </style>
-""", unsafe_allow_html=True)                                                                                              # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
+""", unsafe_allow_html=True)
+
+# ── 3. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
 
@@ -67,7 +63,6 @@ ASSETS_DIR = BASE_DIR / "assets"
 WHATSAPP_NUMBER = "584166481679"
 WHATSAPP_DISPLAY = "+58 (416) 648-1679"
 WHATSAPP_BASE = f"https://wa.me/{WHATSAPP_NUMBER}"
-
 
 # ── 3. MOTOR DE IMÁGENES EN BASE64 CON CACHÉ ─────────────────────────────────
 @st.cache_data(show_spinner=False)
