@@ -20,12 +20,17 @@ st.set_page_config(
 )
 
 st.markdown("""
-    <!-- Enlace PWA para instalación -->
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#8B0000">
+    <!-- Metadatos PWA y Compatibilidad Móvil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2c2620">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="CAR-SEV">
+
+    <!-- Enlace al Manifest e Iconos -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png" href="A/logo_192.png">
     <link rel="apple-touch-icon" href="A/logo_192.png">
 
     <style>
@@ -47,7 +52,7 @@ st.markdown("""
             color: #1a1a1a !important;
         }
     </style>
-""", unsafe_allow_html=True)                                                                                                                          # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
+""", unsafe_allow_html=True)                                                                                              # ── 2. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
 
