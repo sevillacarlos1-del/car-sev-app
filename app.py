@@ -10,7 +10,14 @@ import base64
 import urllib.parse
 from pathlib import Path
 import streamlit as st
-
+# Vinculación del manifiesto PWA
+st.markdown(
+    """
+    <link rel="manifest" href="/app/static/manifest.json">
+    <meta name="theme-color" content="#000000">
+    """,
+    unsafe_allow_html=True
+)
 # --- TÍTULO DE LA PESTAÑA DEL NAVEGADOR ---
 st.set_page_config(
     page_title="CAR-SEV C.A. - Moldes y Filtros",
