@@ -27,6 +27,11 @@ st.set_page_config(
     layout="wide",
     initial_sidebar_state="auto"
 )
+
+# ⏰ RUTA DE KEEP-ALIVE PARA MANTENER RENDER DESPIERTO
+if st.query_params.get("ping") == "true":
+    st.write("pong")
+    st.stop()
 # --- 2. METADATOS PWA Y ESTILOS ---
 st.markdown("""
     <!-- Metadatos PWA y Compatibilidad Móvil -->
