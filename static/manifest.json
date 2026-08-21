@@ -10,25 +10,19 @@
       "src": "/app/static/logo_192.png",
       "sizes": "192x192",
       "type": "image/png"
-    },
-    {
-      "src": "/app/static/logo_192.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
     }
   ],
   "screenshots": [
     {
-      "src": "https://via.placeholder.com/600x400/1E293B/FFFFFF?text=CAR-SEV+C.A.+Escritorio",
-      "sizes": "600x400",
+      "src": "/app/static/logo_192.png",
+      "sizes": "192x192",
       "type": "image/png",
       "form_factor": "wide",
       "label": "CAR-SEV C.A. Escritorio"
     },
     {
-      "src": "https://via.placeholder.com/400x600/1E293B/FFFFFF?text=CAR-SEV+C.A.+Movil",
-      "sizes": "400x600",
+      "src": "/app/static/logo_192.png",
+      "sizes": "192x192",
       "type": "image/png",
       "form_factor": "narrow",
       "label": "CAR-SEV C.A. Móvil"
