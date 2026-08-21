@@ -10,29 +10,17 @@ import base64
 import urllib.parse
 from pathlib import Path
 import streamlit as st
-import os
 
-# --- INYECCIÓN DIRECTA EN EL INDEX.HTML RAÍZ ---
-def inject_pwa_manifest():
-    try:
-        streamlit_path = os.path.dirname(st.__file__)
-        index_path = os.path.join(streamlit_path, "static", "index.html")
-        
-        if os.path.exists(index_path):
-            with open(index_path, "r", encoding="utf-8") as f:
-                html_content = f.read()
-            
-            manifest_tag = '<link rel="manifest" href="/app/static/manifest.json">'
-            if manifest_tag not in html_content:
-                new_html = html_content.replace("</head>", f"  {manifest_tag}\n</head>")
-                with open(index_path, "w", encoding="utf-8") as f:
-                    f.write(new_html)
-    except Exception as e:
-        pass
+# =========================================================
+# 🛠️ PARCHE AUTOMÁTICO DE PWA MANIFEST PARA STREAMLIT
+# =========================================================
+try:
+    from patch_index import patch_streamlit_index
+    patch_streamlit_index()
+except Exception as e:
+    pass
+# =========================================================
 
-inject_pwa_manifest()
-
-# --- CONFIGURACIÓN DE PÁGINA ---
 st.set_page_config(
     page_title="CAR-SEV C.A. - Moldes y Filtros",
     page_icon="⚙️",
