@@ -10,33 +10,35 @@ import base64
 import urllib.parse
 from pathlib import Path
 import streamlit as st
-import streamlit.components.v1 as components
+import os
 
-# --- 1. CONFIGURACIÓN DE LA PÁGINA (SIEMPRE DE PRIMERO) ---
+# --- INYECCIÓN DIRECTA EN EL INDEX.HTML RAÍZ ---
+def inject_pwa_manifest():
+    try:
+        streamlit_path = os.path.dirname(st.__file__)
+        index_path = os.path.join(streamlit_path, "static", "index.html")
+        
+        if os.path.exists(index_path):
+            with open(index_path, "r", encoding="utf-8") as f:
+                html_content = f.read()
+            
+            manifest_tag = '<link rel="manifest" href="/app/static/manifest.json">'
+            if manifest_tag not in html_content:
+                new_html = html_content.replace("</head>", f"  {manifest_tag}\n</head>")
+                with open(index_path, "w", encoding="utf-8") as f:
+                    f.write(new_html)
+    except Exception as e:
+        pass
+
+inject_pwa_manifest()
+
+# --- CONFIGURACIÓN DE PÁGINA ---
 st.set_page_config(
     page_title="CAR-SEV C.A. - Moldes y Filtros",
     page_icon="⚙️",
     layout="wide",
     initial_sidebar_state="auto"
 )
-
-# Inyección forzada del manifiesto
-components.html(
-    """
-    <script>
-        var head = window.parent.document.getElementsByTagName('head')[0];
-        var existingLink = window.parent.document.querySelector("link[rel='manifest']");
-        if (!existingLink) {
-            var link = window.parent.document.createElement('link');
-            link.rel = 'manifest';
-            link.href = '/app/static/manifest.json';
-            head.appendChild(link);
-        }
-    </script>
-    """,
-    height=0,
-)
-
 # --- 2. METADATOS PWA Y ESTILOS ---
 st.markdown("""
     <!-- Metadatos PWA y Compatibilidad Móvil -->
