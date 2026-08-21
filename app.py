@@ -10,6 +10,7 @@ import base64
 import urllib.parse
 from pathlib import Path
 import streamlit as st
+import streamlit.components.v1 as components
 
 # --- 1. CONFIGURACIÓN DE LA PÁGINA (SIEMPRE DE PRIMERO) ---
 st.set_page_config(
@@ -17,6 +18,23 @@ st.set_page_config(
     page_icon="⚙️",
     layout="wide",
     initial_sidebar_state="auto"
+)
+
+# Inyección forzada del manifiesto
+components.html(
+    """
+    <script>
+        var head = window.parent.document.getElementsByTagName('head')[0];
+        var existingLink = window.parent.document.querySelector("link[rel='manifest']");
+        if (!existingLink) {
+            var link = window.parent.document.createElement('link');
+            link.rel = 'manifest';
+            link.href = '/app/static/manifest.json';
+            head.appendChild(link);
+        }
+    </script>
+    """,
+    height=0,
 )
 
 # --- 2. METADATOS PWA Y ESTILOS ---
