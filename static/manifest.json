@@ -1,18 +1,32 @@
 {
-  "name": "Car-Sev C.A. | Moldes de Goma",
+  "name": "CAR-SEV C.A. - Moldes y Filtros",
   "short_name": "CAR-SEV",
-  "description": "Fabricación de moldes de goma para el estampado de pisos y pavimentos",
   "start_url": "/",
-  "scope": "/",
   "display": "standalone",
-  "background_color": "#1A1A1A",
-  "theme_color": "#2c2620",
+  "background_color": "#1E293B",
+  "theme_color": "#1E293B",
   "icons": [
     {
       "src": "/app/static/logo_192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/app/static/logo_192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "CAR-SEV C.A. Escritorio"
+    },
+    {
+      "src": "/app/static/logo_192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "CAR-SEV C.A. Móvil"
     }
   ]
 }
