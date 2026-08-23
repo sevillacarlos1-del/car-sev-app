@@ -1099,7 +1099,7 @@ if "Contacto" in menu_option:
             box-shadow: 0 0 0 1px #AA820A !important;
         }
 
-        /* Botón de envío Industrial/Dorado personalizado */
+        /* Botón de envío Fabrica/Dorado personalizado */
         div.stFormSubmitButton > button {
             background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%) !important;
             color: #FFFFFF !important;
