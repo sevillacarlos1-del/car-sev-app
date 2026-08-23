@@ -925,7 +925,7 @@ elif "Cotizador" in menu_option:
     rigid_count = 4 if "1 Cuadrilla" in crew_size else 8
     flex_count = 1 if inc_flex else 0
 
-    subtotal_molds = (rigid_count * selected_mold_obj["price_usd"]) + (flex_count * 55.00)
+    subtotal_molds = (rigid_count * selected_mold_obj["price_usd"]) + (flex_count * 210.00)
 
     # Insumos estimados
     kg_color = m2_area * 2.40 if inc_color else 0
