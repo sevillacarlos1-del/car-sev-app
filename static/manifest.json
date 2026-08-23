@@ -7,12 +7,12 @@
   "theme_color": "#1E293B",
   "icons": [
     {
-      "src": "/app/static/logo_192.png",
+      "src": "/static/logo_192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/app/static/logo_192.png",
+      "src": "/static/logo_512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -20,18 +20,11 @@
   ],
   "screenshots": [
     {
-      "src": "/app/static/logo_192.png",
+      "src": "/static/logo_192.png",
       "sizes": "192x192",
       "type": "image/png",
       "form_factor": "wide",
       "label": "CAR-SEV C.A. Escritorio"
-    },
-    {
-      "src": "/app/static/logo_192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "CAR-SEV C.A. Móvil"
     }
   ]
 }
