@@ -852,7 +852,7 @@ if "Catálogo" in menu_option:
 
 
 # ── 10. SECCIÓN 3: COTIZADOR / PEDIDOS INTERACTIVO CON FICHA PDF ─────────────
-if "Cotizador" in menu_option:
+elif "Cotizador" in menu_option:
     st.markdown("""
     <div style="text-align: center; padding: 20px 0 10px 0;">
         <span class="ornament-gold">✦ CALCULADORA DE PROYECTO & MATERIALES ✦</span>
@@ -878,100 +878,96 @@ if "Cotizador" in menu_option:
         )
         st.markdown("<br>", unsafe_allow_html=True)
 
-    c_col1, c_col2 = st.columns([1.1, 1], gap="large")
+    # 1. PARÁMETROS PRINCIPALES DE ENTRADA
+    st.markdown('<div class="luxury-card">', unsafe_allow_html=True)
+    st.markdown('<div class="card-title">Parámetros del Proyecto</div>', unsafe_allow_html=True)
+
+    c_col1, c_col2 = st.columns([1, 1], gap="medium")
 
     with c_col1:
-        st.markdown('<div class="luxury-card">', unsafe_allow_html=True)
-        st.markdown('<div class="card-title">Parámetros del Proyecto</div>', unsafe_allow_html=True)
-
-        m2_area = st.number_input("Área total a estampar (m²):", min_value=10, max_value=10000, value=120, step=10)
-
+        m2_area = st.number_input("Área total a estampar (m²):", min_value=10, max_value=10000, value=100, step=10)
         mold_type = st.selectbox(
             "Selecciona el Diseño de Molde Principal (14 disponibles):",
             [p["name"] for p in CATALOG]
         )
-
         selected_mold_obj = next((p for p in CATALOG if p["name"] == mold_type), CATALOG[0])
 
+    with c_col2:
         crew_size = st.selectbox(
             "Cantidad de Cuadrillas de Trabajo Simultáneas:",
             ["1 Cuadrilla (Estándar: 3-4 Moldes Rígidos)", "2 Cuadrillas (Obra Rápida: 6-8 Moldes Rígidos)"]
         )
-
-        st.markdown("<p style='font-weight:700; color:#1A1A1A; margin-top:16px;'>Insumos Complementarios de Estampado:</p>", unsafe_allow_html=True)
+        st.markdown("<p style='font-weight:700; color:#1A1A1A; margin-top:10px; margin-bottom:6px;'>Insumos Complementarios de Estampado:</p>", unsafe_allow_html=True)
         inc_color = st.checkbox("Endurecedor de Color en Polvo (2.40 kg/m²)", value=True)
         inc_release = st.checkbox("Desmoldante en Polvo Anti-Adherente (0.08 kg/m²)", value=True)
         inc_flex = st.checkbox("Incluir Molde Flex Ultra-Plegable para Remates de Paredes", value=True)
-        inc_sealer = st.checkbox("Sellador Acrílico de Lujo Alto Brillo (0.20 L/m²)", value=True)
+        inc_sealer = st.checkbox("Sellador Acrílico activado de Lujo Alto Brillo (0.20 L/m²)", value=True)
 
-        st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
-    with c_col2:
-        # CÁLCULOS TÉCNICOS AUTOMATIZADOS
-        rigid_count = 4 if "1 Cuadrilla" in crew_size else 8
-        flex_count = 1 if inc_flex else 0
+    # 2. CÁLCULOS TÉCNICOS AUTOMATIZADOS Y RESULTADOS EN PANTALLA (Inmediatamente visibles)
+    rigid_count = 4 if "1 Cuadrilla" in crew_size else 8
+    flex_count = 1 if inc_flex else 0
 
-        subtotal_molds = (rigid_count * selected_mold_obj["price_usd"]) + (flex_count * 220.00)
+    subtotal_molds = (rigid_count * selected_mold_obj["price_usd"]) + (flex_count * 55.00)
 
-        # Insumos estimados
-        kg_color = m2_area * 2.40 if inc_color else 0
-        kg_release = m2_area * 0.08 if inc_release else 0
-        liters_sealer = m2_area * 0.20 if inc_sealer else 0
+    # Insumos estimados
+    kg_color = m2_area * 2.40 if inc_color else 0
+    kg_release = m2_area * 0.08 if inc_release else 0
+    liters_sealer = m2_area * 0.20 if inc_sealer else 0
 
-        st.markdown("""
-        <div class="luxury-card" style="background:#FAFAF8 !important;">
-            <div class="card-subtitle">RESUMEN TÉCNICO DE REQUERIMIENTOS</div>
-            <div class="card-title">Presupuesto Estimado de Equipamiento</div>
-            <hr style="border:0; border-top:1px solid #D4AF37; margin:12px 0;">
-        """, unsafe_allow_html=True)
+    st.markdown("""
+    <div class="luxury-card" style="background:#FAFAF8 !important; margin-top:20px;">
+        <div class="card-subtitle">RESUMEN TÉCNICO DE REQUERIMIENTOS</div>
+        <div class="card-title">Presupuesto Estimado de Equipamiento</div>
+        <hr style="border:0; border-top:1px solid #D4AF37; margin:12px 0;">
+    """, unsafe_allow_html=True)
 
-        st.markdown(f"""
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
-            <div class="metric-box">
-                <div class="metric-label">Moldes Rígidos Requeridos</div>
-                <div class="metric-value">{rigid_count} Unidades</div>
-                <div style="font-size:0.75rem; color:#666;">{selected_mold_obj['name']}</div>
-            </div>
-            <div class="metric-box">
-                <div class="metric-label">Moldes Flex de Remate</div>
-                <div class="metric-value">{flex_count} Unidad</div>
-                <div style="font-size:0.75rem; color:#666;">Para esquinas y bordes</div>
-            </div>
+    st.markdown(f"""
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
+        <div class="metric-box">
+            <div class="metric-label">Moldes Rígidos Requeridos</div>
+            <div class="metric-value">{rigid_count} Unidades</div>
+            <div style="font-size:0.75rem; color:#666;">{selected_mold_obj['name']}</div>
         </div>
-
-        <div style="margin-bottom:16px; padding:12px; background:#FFFFFF; border-radius:8px; border:1px solid #E0E0E0;">
-            <p style="font-weight:700; font-size:0.82rem; color:#1A1A1A; margin-bottom:6px;">Insumos Estimados para {m2_area} m²:</p>
-            <ul style="font-size:0.8rem; color:#555555; padding-left:18px; margin:0;">
-                <li>Colorante Endurecedor: <strong>{kg_color:.1f} kg</strong></li>
-                <li>Desmoldante en Polvo: <strong>{kg_release:.1f} kg</strong></li>
-                <li>Sellador Acrílico Lujo: <strong>{liters_sealer:.1f} Litros</strong></li>
-            </ul>
+        <div class="metric-box">
+            <div class="metric-label">Moldes Flex de Remate</div>
+            <div class="metric-value">{flex_count} Unidad</div>
+            <div style="font-size:0.75rem; color:#666;">Para esquinas y bordes</div>
         </div>
+    </div>
 
-        <div style="text-align:center; padding:16px; background:#FFFFFF; border:2px solid #D4AF37; border-radius:12px; margin-bottom:16px;">
-            <div style="font-size:0.78rem; color:#AA820A; font-weight:700; text-transform:uppercase;">Inversión Estimada en Moldes Car-Sev</div>
-            <div style="font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:700; color:#8B0000; margin:4px 0;">
-                ${subtotal_molds:.2f} USD
-            </div>
-            <div style="font-size:0.72rem; color:#777;">*Los precios de insumos químicos se confirman según disponibilidad de color.</div>
+    <div style="margin-bottom:16px; padding:12px; background:#FFFFFF; border-radius:8px; border:1px solid #E0E0E0;">
+        <p style="font-weight:700; font-size:0.82rem; color:#1A1A1A; margin-bottom:6px;">Insumos Estimados para {m2_area} m²:</p>
+        <ul style="font-size:0.8rem; color:#555555; padding-left:18px; margin:0;">
+            <li>Colorante Endurecedor: <strong>{kg_color:.1f} kg</strong></li>
+            <li>Desmoldante en Polvo: <strong>{kg_release:.1f} kg</strong></li>
+            <li>Sellador Acrílico Lujo: <strong>{liters_sealer:.1f} Litros</strong></li>
+        </ul>
+    </div>
+
+    <div style="text-align:center; padding:16px; background:#FFFFFF; border:2px solid #D4AF37; border-radius:12px; margin-bottom:16px;">
+        <div style="font-size:0.78rem; color:#AA820A; font-weight:700; text-transform:uppercase;">Inversión Estimada en Moldes Car-Sev</div>
+        <div style="font-family:'Playfair Display',serif; font-size:2.2rem; font-weight:700; color:#8B0000; margin:4px 0;">
+            ${subtotal_molds:.2f} USD
         </div>
-        """, unsafe_allow_html=True)
+        <div style="font-size:0.72rem; color:#777;">*Los precios de insumos químicos se confirman según disponibilidad de color.</div>
+    </div>
+    """, unsafe_allow_html=True)
 
-        # Generador de mensaje listo para enviar a WhatsApp
-        quote_msg = (
-            f"Hola Car-Sev C.A.! Solícito cotización formal para un proyecto de estampado:\n\n"
-            f"📌 Área Total: {m2_area} m²\n"
-            f"🧩 Molde Elegido: {selected_mold_obj['name']}\n"
-            f"🔢 Cantidad de Moldes: {rigid_count} Rígidos + {flex_count} Flex\n"
-            f"🧪 Insumos Requeridos: Colorante ({kg_color:.0f}kg), Desmoldante ({kg_release:.1f}kg), Sellador ({liters_sealer:.0f}L)\n"
-            f"💵 Subtotal Estimado Moldes: ${subtotal_molds:.2f} USD\n\n"
-            f"Por favor indicarme tiempo de entrega y datos bancarios."
-        )
+    # Generador de mensaje listo para enviar a WhatsApp
+    quote_msg = (
+        f"Hola Car-Sev C.A.! Solícito cotización formal para un proyecto de estampado:\n\n"
+        f"📌 Área Total: {m2_area} m²\n"
+        f"🧩 Molde Elegido: {selected_mold_obj['name']}\n"
+        f"🔢 Cantidad de Moldes: {rigid_count} Rígidos + {flex_count} Flex\n"
+        f"🧪 Insumos Requeridos: Colorante ({kg_color:.0f}kg), Desmoldante ({kg_release:.1f}kg), Sellador ({liters_sealer:.0f}L)\n"
+        f"💵 Subtotal Estimado Moldes: ${subtotal_molds:.2f} USD\n\n"
+        f"Por favor indicarme tiempo de entrega y datos bancarios."
+    )
 
-        st.markdown(wa_button(quote_msg, "✦ Enviar Cotización por WhatsApp"), unsafe_allow_html=True)
-        
-
-
+    st.markdown(wa_button(quote_msg, "✦ Enviar Cotización por WhatsApp"), unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 # ── 11. SECCIÓN 4: CONTACTO & UBICACIÓN SATELITAL (VALENCIA, VENEZUELA) ───────
 if "Contacto" in menu_option:
     st.markdown("""
