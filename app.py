@@ -10,12 +10,14 @@ import base64
 import urllib.parse
 from pathlib import Path
 import streamlit as st
+
 # =========================================================
 # RELOJ KEEP-ALIVE
 # =========================================================
 if st.query_params.get("ping") == "true":
     st.write("pong")
     st.stop()
+
 # =========================================================
 # 🛠️ PARCHE AUTOMÁTICO DE PWA MANIFEST PARA STREAMLIT
 # =========================================================
@@ -33,7 +35,6 @@ st.set_page_config(
     initial_sidebar_state="auto"
 )
 
-
 # --- 2. METADATOS PWA Y ESTILOS ---
 st.markdown("""
     <!-- Metadatos PWA y Compatibilidad Móvil -->
@@ -44,10 +45,10 @@ st.markdown("""
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="CAR-SEV">
 
-    <!-- Enlace al Manifest e Iconos PWA -->
-    <link rel="manifest" href="/app/static/manifest.json">
-    <link rel="icon" type="image/png" href="/app/static/logo_192.png">
-    <link rel="apple-touch-icon" href="/app/static/logo_192.png">
+    <!-- Enlace al Manifest e Iconos PWA (Actualizados a /assets/) -->
+    <link rel="manifest" href="/assets/manifest.json">
+    <link rel="icon" type="image/png" href="/assets/logo_192.png">
+    <link rel="apple-touch-icon" href="/assets/logo_192.png">
 
     <style>
         #MainMenu {visibility: hidden;}
