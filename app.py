@@ -10,7 +10,12 @@ import base64
 import urllib.parse
 from pathlib import Path
 import streamlit as st
-
+# =========================================================
+# RELOJ KEEP-ALIVE
+# =========================================================
+if st.query_params.get("ping") == "true":
+    st.write("pong")
+    st.stop()
 # =========================================================
 # 🛠️ PARCHE AUTOMÁTICO DE PWA MANIFEST PARA STREAMLIT
 # =========================================================
@@ -28,10 +33,7 @@ st.set_page_config(
     initial_sidebar_state="auto"
 )
 
-# ⏰ RUTA DE KEEP-ALIVE PARA MANTENER RENDER DESPIERTO
-if st.query_params.get("ping") == "true":
-    st.write("pong")
-    st.stop()
+
 # --- 2. METADATOS PWA Y ESTILOS ---
 st.markdown("""
     <!-- Metadatos PWA y Compatibilidad Móvil -->
