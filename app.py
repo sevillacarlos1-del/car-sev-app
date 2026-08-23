@@ -6,91 +6,6 @@ Optimizado para Navegación Móvil (iOS / Android) y Despliegue en Render
 ===============================================================================
 """
 
-import shutil
-import pathlib
-import streamlit
-
-def patch_streamlit_index():
-    """
-    1. Copia los archivos de la carpeta local assets/ a la carpeta estática interna de Streamlit.
-    2. Inyecta los metadatos PWA y Favicon en el <head> raíz de Streamlit.
-    """
-    root_dir = pathlib.Path(__file__).parent.resolve()
-    assets_src = root_dir / "assets"
-    
-    # Directorio estático interno de la librería Streamlit
-    st_static_dir = pathlib.Path(streamlit.__file__).parent / "static"
-    index_path = st_static_dir / "index.html"
-
-    if not index_path.exists():
-        print("❌ No se encontró el archivo index.html de Streamlit.")
-        return
-
-    # 1. Copiar recursos de assets/ a streamlit/static/assets/ y streamlit/static/
-    if assets_src.exists():
-        dest_assets = st_static_dir / "assets"
-        dest_assets.mkdir(parents=True, exist_ok=True)
-        for item in assets_src.glob("*"):
-            if item.is_file():
-                # Copiar en static/assets/ y directamente en static/ para compatibilidad total
-                shutil.copy2(item, dest_assets / item.name)
-                shutil.copy2(item, st_static_dir / item.name)
-        print("✅ Recursos de assets/ sincronizados con el servidor estático de Streamlit.")
-
-    # 2. Inyectar tags PWA y Favicon en index.html
-    html_content = index_path.read_text(encoding="utf-8")
-    manifest_tag = 'rel="manifest"'
-
-    if manifest_tag not in html_content:
-        pwa_head_tags = '''
-    <!-- PWA Manifest & Favicon CAR-SEV C.A. -->
-    <link rel="manifest" href="/app/static/assets/manifest.json">
-    <link rel="icon" type="image/png" sizes="192x192" href="/app/static/assets/logo_192.png">
-    <link rel="apple-touch-icon" sizes="192x192" href="/app/static/assets/logo_192.png">
-    <meta name="theme-color" content="#1E293B">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-</head>'''
-        updated_content = html_content.replace("</head>", pwa_head_tags)
-        index_path.write_text(updated_content, encoding="utf-8")
-        print("✅ Streamlit index.html parcheado con éxito con PWA y Favicon.")
-    else:
-        print("ℹ️ Streamlit index.html ya contiene las etiquetas PWA.")
-
-if __name__ == "__main__":
-    patch_streamlit_index()
-2. Archivo assets/manifest.json
-Asegúrate de que las rutas dentro de tu assets/manifest.json apunten a los logos en assets:
-code
-JSON
-{
-  "name": "CAR-SEV C.A. - Moldes y Filtros",
-  "short_name": "CAR-SEV",
-  "description": "Aplicación web oficial para gestión de moldes y pisos estampados industriales",
-  "start_url": "/",
-  "display": "standalone",
-  "background_color": "#0F172A",
-  "theme_color": "#1E293B",
-  "orientation": "any",
-  "icons": [
-    {
-      "src": "/app/static/assets/logo_192.png",
-      "sizes": "192x192",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/app/static/assets/logo_512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ]
-}
-3. Código Optimizado para el Encabezado de app.py
-Reemplaza el encabezado de tu app.py con este bloque corregido:
-code
-Python
 import base64
 import urllib.parse
 from pathlib import Path
@@ -162,7 +77,6 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
-
 # ── 3. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
