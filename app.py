@@ -466,7 +466,7 @@ CATALOG = [
     {
         "id": "laja_san_roman",
         "file": "molde_piedra_laja.jpg",
-        "name": "Molde Piedra Laja San Román",
+        "name": "12 Molde Piedra Laja San Román",
         "category": "Piedras & Lajas",
         "dimensions": "60 x 60 cm",
         "hardness": "Shore A 70",
@@ -477,7 +477,7 @@ CATALOG = [
     {
         "id": "adoquin_romano",
         "file": "molde_adoquin_romano.jpg",
-        "name": "Molde Adoquín Español Rústico",
+        "name": "11 Molde Adoquín Español Rústico",
         "category": "Adoquines",
         "dimensions": "60 x 60 cm",
         "hardness": "Shore A 75",
@@ -488,7 +488,7 @@ CATALOG = [
     {
         "id": "madera_veteada",
         "file": "molde_madera_rustica.jpg",
-        "name": "Molde Tabla de Madera Veteada",
+        "name": "10 Molde Tabla de Madera Veteada",
         "category": "Maderas",
         "dimensions": "120 x 30 cm",
         "hardness": "Shore A 80",
@@ -499,7 +499,7 @@ CATALOG = [
     {
         "id": "ashlar_slate",
         "file": "molde3_piedra_ashlar_slate.jpg",
-        "name": "Molde Piedra Ashlar Slate",
+        "name": "9 Molde Piedra Ashlar Slate",
         "category": "Piedras & Lajas",
         "dimensions": "60 x 60 cm",
         "hardness": "Shore A 85",
@@ -510,7 +510,7 @@ CATALOG = [
     {
         "id": "ashlar_hilera",
         "file": "goma5_piedra_ashlar_en_hilera.jpg",
-        "name": "Molde Piedra Ashlar en Hilera Continuous",
+        "name": "8 Molde Piedra Ashlar en Hilera Continuous",
         "category": "Piedras & Lajas",
         "dimensions": "60 x 45 cm",
         "hardness": "Shore A 80",
@@ -521,7 +521,7 @@ CATALOG = [
     {
         "id": "adoquin_tipo_h",
         "file": "molde6_adoquin_tipo_h.jpg",
-        "name": "Molde Adoquín Intertrabado Tipo H",
+        "name": "7 Molde Adoquín Intertrabado Tipo H",
         "category": "Adoquines",
         "dimensions": "75 x 45 cm",
         "hardness": "Shore A 80",
@@ -532,7 +532,7 @@ CATALOG = [
     {
         "id": "madera_liston",
         "file": "molde7_madera_rustica.jpg",
-        "name": "Molde Madera Rústica Listón Real",
+        "name": "6 Molde Madera Rústica Listón Real",
         "category": "Maderas",
         "dimensions": "90 x 22 cm",
         "hardness": "Shore A 80",
@@ -543,7 +543,7 @@ CATALOG = [
     {
         "id": "adoquin_abanico",
         "file": "molde8_adoquin_en_abanico.jpg",
-        "name": "Molde Adoquín en Abanico Real",
+        "name": "5 Molde Adoquín en Abanico Real",
         "category": "Adoquines",
         "dimensions": "110 x 90 cm",
         "hardness": "Shore A 75",
@@ -554,7 +554,7 @@ CATALOG = [
     {
         "id": "piedra_grid",
         "file": "molde9_piedra_cuadrada_texturizada_grid.jpg",
-        "name": "Molde Piedra Cuadrada Grid Modular",
+        "name": "4 Molde Piedra Cuadrada Grid Modular",
         "category": "Piedras & Lajas",
         "dimensions": "50 x 50 cm",
         "hardness": "Shore A 80",
@@ -565,7 +565,7 @@ CATALOG = [
     {
         "id": "ladrillo_tableta",
         "file": "molde10_ladrillo_tableta_rustica_en_tiras.jpg",
-        "name": "Molde Ladrillo Tableta Rústica en Tiras",
+        "name": "3 Molde Ladrillo Tableta Rústica en Tiras",
         "category": "Adoquines",
         "dimensions": "95 x 22 cm",
         "hardness": "Shore A 65",
@@ -576,7 +576,7 @@ CATALOG = [
     {
         "id": "ashlar_cardenas",
         "file": "molde11_piedra_ashlar_rectangular.jpg",
-        "name": "Molde Piedra Ashlar Rectangular Cárdenas",
+        "name": "2 Molde Piedra Ashlar Rectangular Cárdenas",
         "category": "Piedras & Lajas",
         "dimensions": "60 x 60 cm",
         "hardness": "Shore A 85",
@@ -587,7 +587,7 @@ CATALOG = [
     {
         "id": "grand_valley",
         "file": "molde12_piedra_grand_valley.jpg",
-        "name": "Molde Piedra Grand Valley Exclusivo",
+        "name": "1 Molde Piedra Grand Valley Exclusivo",
         "category": "Piedras & Lajas",
         "dimensions": "75 x 75 cm",
         "hardness": "Shore A 80",
