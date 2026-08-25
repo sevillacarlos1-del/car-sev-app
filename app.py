@@ -60,7 +60,7 @@ st.markdown("""
 <style>
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
-    
+
     /* Botón de la barra lateral visible y en tono dorado */
     [data-testid="collapsedControl"] {
         display: flex !important;
@@ -74,6 +74,25 @@ st.markdown("""
     [data-testid="collapsedControl"] svg {
         fill: #1a1a1a !important;
         color: #1a1a1a !important;
+    }
+
+    /* FIX: Color visible para pestañas y botones de navegación (Inicio, Catálogo, etc.) */
+    button[data-baseweb="tab"], .stButton > button {
+        color: #ffffff !important; /* Texto blanco bien visible */
+        font-weight: bold !important;
+        font-size: 16px !important;
+        background-color: rgba(255, 255, 255, 0.08) !important; /* Fondo suave para que resalte */
+        border-radius: 8px !important;
+        border: 1px solid rgba(212, 175, 55, 0.4) !important; /* Borde dorado tenue */
+        padding: 8px 16px !important;
+        margin: 2px !important;
+    }
+
+    /* Estado activo o al pasar el mouse */
+    button[data-baseweb="tab"][aria-selected="true"], .stButton > button:hover {
+        color: #1a1a1a !important; /* Texto oscuro al seleccionar */
+        background-color: #d4af37 !important; /* Fondo dorado brillante */
+        border-color: #d4af37 !important;
     }
 </style>
 """, unsafe_allow_html=True)
