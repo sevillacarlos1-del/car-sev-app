@@ -695,7 +695,7 @@ st.markdown(f"""
  """, unsafe_allow_html=True)
 
 st.markdown(wa_button("Hola Car-Sev C.A.! Quisiera asesoría rápida sobre moldes de goma.", "💬 WhatsApp Directo"), unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
+st.markdown("</div>", unsafe_allow_html=True)
 
 
 # ── 8. SECCIÓN 1: INICIO / PRESENTACIÓN ──────────────────────────────────────
