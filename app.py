@@ -677,7 +677,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 pdf_file_path = ASSETS_DIR / "carsev_rendimiento_material.pdf"
-    if pdf_file_path.exists():
+if pdf_file_path.exists():
         st.download_button(
             label="📄 Descargar PDF Rendimiento",
             data=pdf_file_path.read_bytes(),
