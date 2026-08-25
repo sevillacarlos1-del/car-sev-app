@@ -96,6 +96,7 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+
 # ── 3. RUTAS RELATIVAS SEGURAS (RENDER & LOCAL) ──────────────────────────────
 BASE_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = BASE_DIR / "assets"
@@ -150,7 +151,7 @@ def inject_custom_css_and_pwa():
     :root {
         --bg-main: #FFFFFF;
         --bg-alt: #FAFAF8;
-        --gold-primary: #D4AF37;f
+        --gold-primary: #D4AF37;
         --gold-light: #FFE57F;
         --gold-dark: #AA820A;
         --chic-red: #8B0000;
@@ -659,25 +660,25 @@ with st.sidebar:
     <div style="height: 2px; background: linear-gradient(90deg, transparent, #D4AF37, transparent); margin-bottom: 20px;"></div>
     """, unsafe_allow_html=True)
 
-menu_option = st.radio(
+    menu_option = st.radio(
         "Navegación Principal",
         [
-            "🏠  Inicio",
-            "🧩  Catálogo",
-            "🧮  Cotizador",
-            "📍  Contacto"
+            "🏠 Inicio",
+            "📖 Catálogo",
+            "🧮 Cotizador",
+            "📞 Contacto"
         ],
         index=0
     )
 
-st.markdown("""
+    st.markdown("""
     <div style="margin-top: 30px; padding: 16px; background: rgba(212,175,55,0.06); border: 1px solid #D4AF37; border-radius: 12px; text-align: center;">
         <p class="ornament-gold" style="font-size:0.65rem;">DOCUMENTACIÓN TÉCNICA</p>
         <p style="font-size:0.8rem; font-weight:700; color:#1A1A1A; margin:4px 0 10px 0;">Ficha de Rendimientos</p>
     """, unsafe_allow_html=True)
 
-pdf_file_path = ASSETS_DIR / "carsev_rendimiento_material.pdf"
-if pdf_file_path.exists():
+    pdf_file_path = ASSETS_DIR / "carsev_rendimiento_material.pdf"
+    if pdf_file_path.exists():
         st.download_button(
             label="📄 Descargar PDF Rendimiento",
             data=pdf_file_path.read_bytes(),
@@ -686,20 +687,20 @@ if pdf_file_path.exists():
             use_container_width=True
         )
 
-st.markdown(f"""
+    st.markdown(f"""
         <div style="margin-top:16px;">
             <p class="ornament-gold" style="font-size:0.65rem;">ATENCIÓN DIRECTA</p>
             <p style="font-size:0.85rem; font-weight:700; color:#1A1A1A; margin:4px 0;">{WHATSAPP_DISPLAY}</p>
             <p style="font-size:0.75rem; color:#555555; margin-bottom:10px;">Valencia / Envíos a Nivel Nacional</p>
         </div>
- """, unsafe_allow_html=True)
+    """, unsafe_allow_html=True)
 
-st.markdown(wa_button("Hola Car-Sev C.A.! Quisiera asesoría rápida sobre moldes de goma.", "💬 WhatsApp Directo"), unsafe_allow_html=True)
-st.markdown("</div>", unsafe_allow_html=True)
+    st.markdown(wa_button("Hola Car-Sev C.A.! Quisiera asesoría rápida sobre moldes de goma.", "💬 WhatsApp Directo"), unsafe_allow_html=True)
+    st.markdown("</div>", unsafe_allow_html=True)
 
 
 # ── 8. SECCIÓN 1: INICIO / PRESENTACIÓN ──────────────────────────────────────
-if "Inicio" in menu_option:
+if "🏠 Inicio" in menu_option or "Inicio" in menu_option:
     # Logotipo principal (logo1_original.png = alta resolución)
     logo_inicio = img_b64("logo1_original.png") or img_b64("logo_original.png") or img_b64("logo_192.png")
     if logo_inicio:
@@ -787,7 +788,8 @@ if "Inicio" in menu_option:
     st.markdown("""
     <div style="margin-top: 36px; padding: 28px; background: #FFFFFF; border: 2px solid #D4AF37; border-radius: 16px; box-shadow: 0 4px 20px rgba(212,175,55,0.12);">
         <h3 style="font-family:'Playfair Display', serif; color: #8B0000; font-size: 1.4rem; text-align: center; margin-bottom: 20px;">
-        </div>
+            Proceso de Instalación y Estampado Profesional
+        </h3>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
             <div style="padding: 12px; border-left: 3px solid #D4AF37;">
                 <p style="font-weight: 700; color: #AA820A; font-size: 0.8rem;">PASO 1</p>
@@ -812,8 +814,9 @@ if "Inicio" in menu_option:
         </div>
     </div>
     """, unsafe_allow_html=True)
+
 # ── 9. SECCIÓN 2: CATÁLOGO COMPLETO DE 14 MOLDES ────────────────────────────
-if "Catálogo" in menu_option:
+elif "📖 Catálogo" in menu_option or "Catálogo" in menu_option:
     st.markdown("""
     <div style="text-align: center; padding: 20px 0 10px 0;">
         <span class="ornament-gold">✦ GALERÍA DE 14 MODELOS EXCLUSIVOS ✦</span>
@@ -878,7 +881,7 @@ if "Catálogo" in menu_option:
 
 
 # ── 10. SECCIÓN 3: COTIZADOR / PEDIDOS INTERACTIVO CON FICHA PDF ─────────────
-elif "Cotizador" in menu_option:
+elif "🧮 Cotizador" in menu_option or "Cotizador" in menu_option:
     st.markdown("""
     <div style="text-align: center; padding: 20px 0 10px 0;">
         <span class="ornament-gold">✦ CALCULADORA DE PROYECTO & MATERIALES ✦</span>
@@ -1005,8 +1008,9 @@ elif "Cotizador" in menu_option:
 
         st.markdown(wa_button(quote_msg, "✦ Enviar Cotización por WhatsApp"), unsafe_allow_html=True)
         st.markdown("</div>", unsafe_allow_html=True)
+
 # ── 11. SECCIÓN 4: CONTACTO & UBICACIÓN SATELITAL (VALENCIA, VENEZUELA) ───────
-if "Contacto" in menu_option:
+elif "📞 Contacto" in menu_option or "Contacto" in menu_option:
     st.markdown("""
     <div style="text-align: center; padding: 20px 0 10px 0;">
         <span class="ornament-gold">✦ ATENCIÓN INSTITUCIONAL & ASESORÍA ✦</span>
@@ -1021,7 +1025,7 @@ if "Contacto" in menu_option:
     """, unsafe_allow_html=True)
 
     ct_col1, ct_col2 = st.columns([1, 1], gap="large")
-    
+
     with ct_col1:
         st.markdown(f"""
         <div style="margin-bottom:16px;">
@@ -1044,7 +1048,7 @@ if "Contacto" in menu_option:
             <div style="font-size:0.88rem; color:#555555;">Lunes a Viernes: 8:00 AM – 5:00 PM | Sábados: 8:00 AM – 12:00 PM</div>
         </div>
         """, unsafe_allow_html=True)
-        
+
         st.markdown(wa_button("Hola Car-Sev C.A.! Quisiera coordinar una visita en Valencia o solicitar cotización.", "✦ Escribir a WhatsApp Oficial (+58 0416-6481679)"), unsafe_allow_html=True)
         st.markdown("</div>", unsafe_allow_html=True)
 
@@ -1083,89 +1087,90 @@ if "Contacto" in menu_option:
         </div>
         """, unsafe_allow_html=True)
 
-       # 1. Estilos CSS optimizados para el Formulario
-    st.markdown("""
-    <style>
-        /* Contenedor del formulario */
-        div[data-testid="stForm"] {
-            border: none !important;
-            padding: 0 !important;
-        }
+        # 1. Estilos CSS optimizados para el Formulario
+        st.markdown("""
+        <style>
+            /* Contenedor del formulario */
+            div[data-testid="stForm"] {
+                border: none !important;
+                padding: 0 !important;
+            }
 
-        /* Estilo para los Labels (Títulos de los campos) */
-        div[data-testid="stForm"] label {
-            color: #1A1A1A !important;
-            font-weight: 600 !important;
-            font-size: 0.85rem !important;
-            margin-bottom: 4px !important;
-        }
+            /* Estilo para los Labels (Títulos de los campos) */
+            div[data-testid="stForm"] label {
+                color: #1A1A1A !important;
+                font-weight: 600 !important;
+                font-size: 0.85rem !important;
+                margin-bottom: 4px !important;
+            }
 
-        /* Campos de texto y área de texto: Fondo claro, bordes limpios y texto oscuro */
-        div.stTextInput > div > div > input, 
-        div.stTextArea > div > div > textarea {
-            background-color: #FAFAFA !important;
-            color: #1A1A1A !important;
-            border: 1px solid #D1D5DB !important;
-            border-radius: 8px !important;
-            padding: 12px !important;
-            font-family: 'Montserrat', sans-serif !important;
-        }
+            /* Campos de texto y área de texto: Fondo claro, bordes limpios y texto oscuro */
+            div.stTextInput > div > div > input, 
+            div.stTextArea > div > div > textarea {
+                background-color: #FAFAFA !important;
+                color: #1A1A1A !important;
+                border: 1px solid #D1D5DB !important;
+                border-radius: 8px !important;
+                padding: 12px !important;
+                font-family: 'Montserrat', sans-serif !important;
+            }
 
-        /* Focus en los campos (al hacer clic) */
-        div.stTextInput > div > div > input:focus, 
-        div.stTextArea > div > div > textarea:focus {
-            border-color: #AA820A !important;
-            box-shadow: 0 0 0 1px #AA820A !important;
-        }
+            /* Focus en los campos (al hacer clic) */
+            div.stTextInput > div > div > input:focus, 
+            div.stTextArea > div > div > textarea:focus {
+                border-color: #AA820A !important;
+                box-shadow: 0 0 0 1px #AA820A !important;
+            }
 
-        /* Botón de envío Fabrica/Dorado personalizado */
-        div.stFormSubmitButton > button {
-            background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%) !important;
-            color: #FFFFFF !important;
-            border: 1px solid #8E6B08 !important;
-            border-radius: 8px !important;
-            padding: 14px 20px !important;
-            font-weight: 700 !important;
-            font-size: 0.9rem !important;
-            text-transform: uppercase !important;
-            letter-spacing: 0.05em !important;
-            width: 100% !important;
-            transition: all 0.3s ease !important;
-            cursor: pointer !important;
-        }
+            /* Botón de envío Fabrica/Dorado personalizado */
+            div.stFormSubmitButton > button {
+                background: linear-gradient(135deg, #D4AF37 0%, #AA820A 100%) !important;
+                color: #FFFFFF !important;
+                border: 1px solid #8E6B08 !important;
+                border-radius: 8px !important;
+                padding: 14px 20px !important;
+                font-weight: 700 !important;
+                font-size: 0.9rem !important;
+                text-transform: uppercase !important;
+                letter-spacing: 0.05em !important;
+                width: 100% !important;
+                transition: all 0.3s ease !important;
+                cursor: pointer !important;
+            }
 
-        div.stFormSubmitButton > button:hover {
-            background: #8E6B08 !important;
-            box-shadow: 0 4px 15px rgba(170, 130, 10, 0.35) !important;
-            transform: translateY(-1px) !important;
-            color: #FFFFFF !important;
-        }
-    </style>
-    """, unsafe_allow_html=True)
+            div.stFormSubmitButton > button:hover {
+                background: #8E6B08 !important;
+                box-shadow: 0 4px 15px rgba(170, 130, 10, 0.35) !important;
+                transform: translateY(-1px) !important;
+                color: #FFFFFF !important;
+            }
+        </style>
+        """, unsafe_allow_html=True)
 
-   # 2. Bloque único del Formulario de Contacto
-    with st.form("form_valencia"):
-        user_name = st.text_input("Nombre Completo:", placeholder="Ej. Carlos Sevilla")
-        user_phone = st.text_input("Teléfono / WhatsApp:", placeholder="Ej. 04166481679")
-        user_city = st.text_input("Ciudad / Estado:", placeholder="Ej. Valencia, Carabobo")
-        user_msg = st.text_area("Detalles de tu consulta:", placeholder="Escribe aquí los detalles de tu requerimiento...")
-        
-        submit_btn = st.form_submit_button("Enviar Mensaje a Produccion Valencia")
+        # 2. Bloque único del Formulario de Contacto
+        with st.form("form_valencia"):
+            user_name = st.text_input("Nombre Completo:", placeholder="Ej. Carlos Sevilla")
+            user_phone = st.text_input("Teléfono / WhatsApp:", placeholder="Ej. 04166481679")
+            user_city = st.text_input("Ciudad / Estado:", placeholder="Ej. Valencia, Carabobo")
+            user_msg = st.text_area("Detalles de tu consulta:", placeholder="Escribe aquí los detalles de tu requerimiento...")
 
-        if submit_btn:
-            if user_name and user_phone:
-                st.success("¡Gracias por contactar a Car-Sev C.A.! Tu mensaje ha sido enviado a nuestra fabrica en Valencia. Un asesor te responderá a la brevedad.")
-            else:
-                st.warning("Por favor completa tu Nombre y Teléfono para procesar el mensaje.")
+            submit_btn = st.form_submit_button("Enviar Mensaje a Produccion Valencia")
 
-    st.markdown("</div>", unsafe_allow_html=True)
+            if submit_btn:
+                if user_name and user_phone:
+                    st.success("¡Gracias por contactar a Car-Sev C.A.! Tu mensaje ha sido enviado a nuestra fabrica en Valencia. Un asesor te responderá a la brevedad.")
+                else:
+                    st.warning("Por favor completa tu Nombre y Teléfono para procesar el mensaje.")
+
+        st.markdown("</div>", unsafe_allow_html=True)
 
 # ── 12. PIE DE PÁGINA PROFESIONAL (FOOTER) ──────────────────────────────────
 st.markdown("""
 <div class="divider-gold" style="max-width:100%; margin:40px 0 10px 0;"></div>
 <footer style="text-align:center; padding: 20px 10px 30px 10px;">
     <p style="font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; color:#8B0000; letter-spacing:0.15em; margin-bottom:4px;">
-        CAR-SEV C.A.    </p>
+        CAR-SEV C.A.
+    </p>
     <p class="ornament-gold" style="font-size:0.7rem; margin-bottom:8px;">
         © 2026 CAR-SEV C.A. · TODOS LOS DERECHOS RESERVADOS · VALENCIA, CARABOBO, VENEZUELA
     </p> 
