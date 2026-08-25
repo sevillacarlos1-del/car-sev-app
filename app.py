@@ -643,10 +643,10 @@ with st.sidebar:
     menu_option = st.radio(
         "Navegación Principal",
         [
-            "🏠  Inicio",
-            "🧩  Catálogo",
-            "🧮  Cotizador",
-            "📍  Contacto"
+            "Inicio",
+            "Catálogo",
+            "Cotizador",
+            "Contacto"
         ],
         index=0
     )
