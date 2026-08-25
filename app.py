@@ -676,7 +676,7 @@ st.markdown("""
         <p style="font-size:0.8rem; font-weight:700; color:#1A1A1A; margin:4px 0 10px 0;">Ficha de Rendimientos</p>
     """, unsafe_allow_html=True)
 
-    pdf_file_path = ASSETS_DIR / "carsev_rendimiento_material.pdf"
+pdf_file_path = ASSETS_DIR / "carsev_rendimiento_material.pdf"
     if pdf_file_path.exists():
         st.download_button(
             label="📄 Descargar PDF Rendimiento",
