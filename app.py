@@ -659,17 +659,7 @@ with st.sidebar:
     <div style="height: 2px; background: linear-gradient(90deg, transparent, #D4AF37, transparent); margin-bottom: 20px;"></div>
     """, unsafe_allow_html=True)
 
-    menu_option = st.radio(
-        "Navegación Principal",
-        [
-            "Inicio",
-            "Catálogo",
-            "Cotizador",
-            "Contacto"
-        ],
-        index=0
-    )
-
+menu_option = st.radio("Navegación Principal", ["🏠 Inicio", "📖 Catálogo", "🧮 Cotizador", "📞 Contacto"], index=0)
     st.markdown("""
     <div style="margin-top: 30px; padding: 16px; background: rgba(212,175,55,0.06); border: 1px solid #D4AF37; border-radius: 12px; text-align: center;">
         <p class="ornament-gold" style="font-size:0.65rem;">DOCUMENTACIÓN TÉCNICA</p>
