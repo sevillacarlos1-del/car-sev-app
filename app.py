@@ -659,7 +659,7 @@ with st.sidebar:
     <div style="height: 2px; background: linear-gradient(90deg, transparent, #D4AF37, transparent); margin-bottom: 20px;"></div>
     """, unsafe_allow_html=True)
 
- menu_option = st.radio(
+menu_option = st.radio(
         "Navegación Principal",
         [
             "🏠  Inicio",
