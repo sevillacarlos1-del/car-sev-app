@@ -788,7 +788,7 @@ if "Inicio" in menu_option:
             <div style="padding: 12px; border-left: 3px solid #D4AF37;">
                 <p style="font-weight: 700; color: #AA820A; font-size: 0.8rem;">PASO 4</p>
                 <p style="font-weight: 600; color: #1A1A1A;">Lavado & Sellado Lujo</p>
-                <p style="font-size: 0.82rem; color: #555555;">Lavado a presión de excesos y aplicación de sellador acrílico protector brillante.</p>
+                <p style="font-size: 0.82rem; color: #555555;">Lavado a presión de excesos y aplicación de sellador acrílico activado protector brillante.</p>
             </div>
         </div>
     </div>
@@ -960,7 +960,7 @@ elif "Cotizador" in menu_option:
             <ul style="font-size:0.8rem; color:#555555; padding-left:18px; margin:0;">
                 <li>Colorante Endurecedor: <strong>{kg_color:.1f} kg</strong></li>
                 <li>Desmoldante en Polvo: <strong>{kg_release:.1f} kg</strong></li>
-                <li>Sellador Acrílico Lujo: <strong>{liters_sealer:.1f} Litros</strong></li>
+                <li>Sellador Acrílico Activado Lujo: <strong>{liters_sealer:.1f} Litros</strong></li>
             </ul>
         </div>
 
@@ -1135,7 +1135,7 @@ if "Contacto" in menu_option:
 
         if submit_btn:
             if user_name and user_phone:
-                st.success("¡Gracias por contactar a Car-Sev C.A.! Tu mensaje ha sido enviado a nuestra planta en Valencia. Un asesor te responderá a la brevedad.")
+                st.success("¡Gracias por contactar a Car-Sev C.A.! Tu mensaje ha sido enviado a nuestra fabrica en Valencia. Un asesor te responderá a la brevedad.")
             else:
                 st.warning("Por favor completa tu Nombre y Teléfono para procesar el mensaje.")
 
