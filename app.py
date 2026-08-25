@@ -670,7 +670,7 @@ menu_option = st.radio(
         index=0
     )
 
-    st.markdown("""
+st.markdown("""
     <div style="margin-top: 30px; padding: 16px; background: rgba(212,175,55,0.06); border: 1px solid #D4AF37; border-radius: 12px; text-align: center;">
         <p class="ornament-gold" style="font-size:0.65rem;">DOCUMENTACIÓN TÉCNICA</p>
         <p style="font-size:0.8rem; font-weight:700; color:#1A1A1A; margin:4px 0 10px 0;">Ficha de Rendimientos</p>
