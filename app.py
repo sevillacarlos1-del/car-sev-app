@@ -686,7 +686,7 @@ if pdf_file_path.exists():
             use_container_width=True
         )
 
-    st.markdown(f"""
+st.markdown(f"""
         <div style="margin-top:16px;">
             <p class="ornament-gold" style="font-size:0.65rem;">ATENCIÓN DIRECTA</p>
             <p style="font-size:0.85rem; font-weight:700; color:#1A1A1A; margin:4px 0;">{WHATSAPP_DISPLAY}</p>
